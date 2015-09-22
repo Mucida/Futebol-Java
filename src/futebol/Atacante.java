@@ -11,6 +11,7 @@ import java.util.Random;
 */
 public final class Atacante extends Jogador implements Treino{
     
+    private static final String usa = "Pés";
     private int gols; //gols marcados pelo atacante 
     Random r = new Random();
     
@@ -39,7 +40,9 @@ public final class Atacante extends Jogador implements Treino{
         
     }
     
-
+    public String getUsa(){
+        return usa;
+    }
 
     //funcao da interface que aumenta skills do atacante
     @Override
@@ -71,7 +74,8 @@ public final class Atacante extends Jogador implements Treino{
     que o atributo "tipo" em "Jogador" é PROTECTED, logo pode ser acessado diretamente
     de uma classe filha, sem precisar dos métodos SET e GET
     */
-    private void setTipo(){
+    @Override
+    public void setTipo(){
         super.tipo = "Atacante";
     }
     
@@ -82,13 +86,13 @@ public final class Atacante extends Jogador implements Treino{
     
     //polimorfismo, este método existe abstrato em Jogador e concreto(implementado) em Goleiro e Atacante 
     @Override
-    public void setSkill() {
+    public void setFeitos() {
         this.gols = r.nextInt(2);
     }
     
     //polimofirsmo, este método existe abstrato em Jogador e concreto(implementado) em Goleiro e Atacante 
     @Override
-    public int getFeito(){
+    public int getFeitos(){
         return gols;
     }
     

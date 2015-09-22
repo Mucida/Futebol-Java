@@ -31,8 +31,8 @@ import javax.swing.JOptionPane;
 */
 public final class PreJogo extends javax.swing.JFrame {
 
-    Time tA;
-    Time tB;
+    static Time tA;
+    static Time tB;
     Random r = new Random();
 
     //Cria um atributo chamado instancia que só a PreJogo pode ver (private) e contém sempre o mesmo valor (static).
@@ -462,11 +462,11 @@ public final class PreJogo extends javax.swing.JFrame {
             atualizaA(n);
             if(n.getTipo().contains("Goleiro")){
                 lblDefGol1.setText("Defesas:");
-                lblDefGolsQtd1.setText(Integer.toString(n.getFeito()));
+                lblDefGolsQtd1.setText(Integer.toString(n.getFeitos()));
             }
             else{
                 lblDefGol1.setText("Gols:");
-                lblDefGolsQtd1.setText(Integer.toString(n.getFeito()));
+                lblDefGolsQtd1.setText(Integer.toString(n.getFeitos()));
             }
         }
     }//GEN-LAST:event_cbxTimeAItemStateChanged
@@ -524,12 +524,11 @@ public final class PreJogo extends javax.swing.JFrame {
 
     //método soh para gerar aleatoriamente gols e defesas da ultima partida
     private void sorteiaGolsDefesas(){
-        Random r = new Random();
         
         for(Jogador j : tA.getJogadores())
-            j.setSkill();
+            j.setFeitos(); 
         for(Jogador j : tB.getJogadores())
-            j.setSkill();
+            j.setFeitos();
         
     }
     

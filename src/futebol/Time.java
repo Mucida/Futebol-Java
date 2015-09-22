@@ -4,10 +4,9 @@ package futebol;
 /*
     Classe responsável por armazenar 3 jogadores, criando a instância de um time
 */
-public class Time {
+public class Time { //nao preciso herdar Jogador para usa-lo, pois não quero executar suas funcoes, apenas usa-lo
 
     private final Jogador[] jogadores; //array "final" pq não será modificado na classe
-    private double influencia;
     
     //construtor de um time
     public Time(Goleiro goleiro, Atacante a1, Atacante a2){

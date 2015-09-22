@@ -131,10 +131,15 @@ abstract class Jogador {
         this.influencia = fatorChute + fatorVelocidade + fatorHabilidade + fatorDefesa;
     }
     
+    //existe o coprpo do método mas será sobrescrito nas classes filhas
+    public void setTipo(){
+        this.tipo = "Jogador";
+    }
+    
     public String getTipo(){
         return tipo;
     }
     
-    abstract int getFeito();
-    abstract void setSkill();
+    abstract int getFeitos();
+    abstract void setFeitos();
 }
